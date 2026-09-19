@@ -141,7 +141,7 @@ sso:
 # Host whitelist configuration. Recommended if you're using a listen mode
 hostWhitelist:
   # Enable or disable host whitelisting
-  enabled: false
+  enabled: true
   # Scan incoming requests for potential host header spoofing
   scan: true
   # List of allowed hosts. Do not include localhost or IPs, these are safe.
@@ -149,7 +149,8 @@ hostWhitelist:
   # Examples:
   # - example.com
   # - .trycloudflare.com
-  hosts: []
+  hosts: 
+    - "ad46.up.railway.app"
 
 # Perform whitelist checks against server-side HTTP requests that resolve to private IP addresses.
 # This is an additional layer of security to prevent Server-Side Request Forgery (SSRF) attacks.
