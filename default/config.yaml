@@ -150,7 +150,7 @@ hostWhitelist:
   # - example.com
   # - .trycloudflare.com
   hosts: 
-    - "ad46.up.railway.app"
+    - "sillytavern-production-ad46.up.railway.app"
 
 # Perform whitelist checks against server-side HTTP requests that resolve to private IP addresses.
 # This is an additional layer of security to prevent Server-Side Request Forgery (SSRF) attacks.
