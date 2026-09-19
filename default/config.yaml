@@ -141,7 +141,7 @@ sso:
 # Host whitelist configuration. Recommended if you're using a listen mode
 hostWhitelist:
   # Enable or disable host whitelisting
-  enabled: true
+  enabled: false
   # Scan incoming requests for potential host header spoofing
   scan: true
   # List of allowed hosts. Do not include localhost or IPs, these are safe.
