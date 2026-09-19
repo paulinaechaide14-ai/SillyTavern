@@ -57,7 +57,7 @@ ssl:
   keyPassphrase: ""
 # -- SECURITY CONFIGURATION --
 # Toggle whitelist mode
-whitelistMode: false
+whitelistMode: true
 # When enabled, whitelist will also verify IP in headers enabled in `forwardedHeaders` section.
 enableForwardedWhitelist: true
 # Whitelist of allowed IP addresses
@@ -143,15 +143,15 @@ hostWhitelist:
   # Enable or disable host whitelisting
   enabled: true
   # Scan incoming requests for potential host header spoofing
-  scan: true
+  scan: false
   # List of allowed hosts. Do not include localhost or IPs, these are safe.
   # Use a dot to create subdomain patterns.
   # Examples:
   # - example.com
   # - .trycloudflare.com
   hosts:
-    - ".up.railway.app"
     - "sillytavern-production-ad46.up.railway.app"
+    - ".up.railway.app"
 
 # Perform whitelist checks against server-side HTTP requests that resolve to private IP addresses.
 # This is an additional layer of security to prevent Server-Side Request Forgery (SSRF) attacks.
