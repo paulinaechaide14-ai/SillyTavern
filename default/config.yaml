@@ -64,6 +64,7 @@ enableForwardedWhitelist: true
 whitelist:
   - ::1
   - 127.0.0.1
+  - 100.64.0.0/10
 # Automatically whitelist Docker host and gateway IPs
 whitelistDockerHosts: true
 # Toggle basic authentication for endpoints
@@ -143,7 +144,7 @@ hostWhitelist:
   # Enable or disable host whitelisting
   enabled: true
   # Scan incoming requests for potential host header spoofing
-  scan: false
+  scan: true
   # List of allowed hosts. Do not include localhost or IPs, these are safe.
   # Use a dot to create subdomain patterns.
   # Examples:
@@ -151,14 +152,13 @@ hostWhitelist:
   # - .trycloudflare.com
   hosts:
     - "sillytavern-production-ad46.up.railway.app"
-    - ".up.railway.app"
 
 # Perform whitelist checks against server-side HTTP requests that resolve to private IP addresses.
 # This is an additional layer of security to prevent Server-Side Request Forgery (SSRF) attacks.
 # Recommended when listen mode is enabled, or if your server is accessible by untrusted users.
 privateAddressWhitelist:
   # Enable private address whitelist to block requests to private IP ranges.
-  enabled: false
+  enabled: true
   # If true, requests to hosts that cannot be resolved will be allowed instead of blocked.
   allowUnresolvedHosts: false
   # Log blocked and allowed requests to the console.
@@ -172,6 +172,7 @@ privateAddressWhitelist:
   allowedRanges:
     - '127.0.0.0/8'      # Loopback (IPv4)
     - '::1/128'          # Loopback (IPv6)
+    - '100.64.0.0/10'    # Railway Internal Network Proxy
 
 # User session timeout *in seconds* (defaults to 24 hours).
 ## Set to a positive number to expire session after a certain time of inactivity
